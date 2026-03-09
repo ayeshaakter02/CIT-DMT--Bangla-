@@ -1,0 +1,196 @@
+@import "tailwindcss";
+
+@theme {
+  --default-font-family: "Hind Siliguri", sans-serif;
+  --color-dmt-black1: #1e1e1f;
+  --color-dmt-black2: #38435c;
+  --color-dmt-brand1-lg1: #ff8079;
+  --color-dmt-brand1-lg2: #ff1e1e;
+  --color-dmt-brand2: #df3636;
+  --color-dmt-brand3: #ffe9e9;
+  --color-dmt-blue1: #4285fa;
+  --color-dmt-blue2: #f1f5ff;
+  --color-dmt-blue3: #f4f8fc;
+  --color-dmt-green1: #34a853;
+  --color-dmt-green2: #eff8f2;
+  --color-dmt-yellow1: #f88513;
+  --color-dmt-yellow2: #fdf5e6;
+  --color-dmt-gray1: #6f7b88;
+  --color-dmt-gray2: #a9b0b8;
+  --color-dmt-gray3: #e9f0f8;
+  --color-dmt-lin1: #f88513;
+  --color-dmt-lin2: #34a853;
+  --color-dmt-ratings-lg1: #ffa600;
+  --color-dmt-ratings-lg2: #ff6c10;
+}
+
+@layer base {
+  .container {
+    @apply max-w-285! mx-auto;
+  }
+  ul, ol {
+    @apply list-none;
+    padding-left: 0;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply py-3 sm:py-2.5 items-center md:text-base text-sm bg-dmt-blue1 text-white font-semibold leading-[150%] rounded-[10px] cursor-pointer;
+  }
+  /* banner */
+.banner-label {
+  @apply lg:w-29 flex items-center justify-center gap-2 
+        px-3 py-[9.5px] text-sm font-normal 
+         border rounded-xl leading-[120%] whitespace-nowrap;
+}
+
+  .form-label {
+    @apply block text-xs font-medium text-dmt-black1 mb-2 leading-[150%];
+  }
+
+  .form-input {
+    @apply w-full rounded-lg border border-dmt-gray2
+  bg-dmt-blue3
+  focus:bg-white
+  focus:border-dmt-blue1
+  focus:outline-none
+  placeholder:text-dmt-gray1
+  focus:placeholder:text-dmt-blue1
+  text-xs
+  pl-9.5 py-2.75
+  transition-all duration-200;
+  }
+
+  .input-icon {
+    @apply absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5;
+  }
+
+  .form-animation {
+    @apply relative p-0.5 rounded-2xl overflow-hidden
+    before:content-['']
+    before:absolute
+    before:top-1/2
+    before:left-1/2
+    before:w-100
+    before:h-[250%]
+    before:-translate-x-1/2
+    before:-translate-y-1/2
+    before:animate-[spin_6s_linear_infinite] before:blur-[20px]
+    after:content-['']
+    after:absolute
+    after:inset-0.75
+    after:bg-white
+    after:rounded-2xl;
+  }
+  .common-title {
+    @apply text-3xl lg:text-5xl xl:text-[56px] font-extrabold leading-[120%] text-dmt-black1 capitalize
+  }
+  .common-paragraph{
+    @apply mt-4 text-base lg:text-lg font-normal max-w-223.5 mx-auto text-dmt-black2 leading-[150%] mb-8
+  }
+  /* promotional-video */
+  .promotion-video-article {
+    @apply text-[20px] md:text-[14px] lg:text-[18px] xl:text-[20px] font-semibold leading-[150%] mb-2 text-dmt-black2 capitalize
+  }
+  .promotion-video-paragraph {
+    @apply text-sm md:text-[12px] xl:text-sm text-dmt-black2 leading-[150%] font-normal
+  }
+  /* course-module */
+  .course-module-div {
+    @apply p-4 border-[0.5px] rounded-[10px] bg-white overflow-hidden transition-all duration-300
+  }
+  .course-module-img {
+    @apply w-10 h-10 flex items-center justify-center rounded-[10px]
+  }
+  .course-module-title {
+    @apply font-semibold text-dmt-black1 text-[16px] lg:text-lg leading-[150%] m-0
+  }
+  .course-module-para {
+    @apply text-dmt-black2 font-normal text-[14px] leading-[150%]
+  }
+  .course-modul-chevron {
+    @apply w-8 h-8 text-dmt-gray2
+  }
+  /* journey */
+  .journey-card-number {
+    @apply text-2xl md:text-3xl font-bold rounded-[10px] py-1 px-5
+  }
+  .journey-card-heading {
+    @apply text-[20px] md:text-xl font-semibold text-dmt-black1 mb-3
+  }
+  .journey-card-paragraph {
+    @apply text-dmt-gray1 text-sm leading-[150%] font-normal
+  }
+  /* students-stories */
+  /* CARD STYLE */
+  .card {
+    @apply w-162 mx-auto  
+         shrink-0 rounded-2xl 
+         p-4 mt-5 
+         border-dmt-gray3 border-[0.5px]
+         gap-4
+         grid
+         grid-cols-1
+         sm:grid-cols-2
+         lg:grid-cols-1
+         xl:grid-cols-2
+         place-items-center
+         sm:place-items-start
+         lg:place-items-center
+         xl:place-items-start
+         text-center
+         sm:text-start
+         lg:text-center
+         xl:text-start;
+  }
+  .students-stories-card {
+    @apply  flex flex-row sm:flex-col lg:flex-row lg:items-start sm:justify-center items-start rounded-[20px] overflow-hidden p-2 xl:p-4
+  }
+  .students-stories-rate {
+    @apply text-xl font-semibold text-dmt-black1
+  }
+  .students-stories-details {
+    @apply text-sm text-dmt-black2 leading-[150%] lg:pt-2.5 font-normal
+  }
+  .students-stories-name{
+    @apply text-xl font-semibold text-dmt-black1 sm:mt-8 leading-[150%]
+  }
+  .students-stories-batch {
+    @apply text-sm leading-[150%] font-normal text-dmt-black2
+  }
+  /* faq */
+  .faq-details {
+    @apply bg-dmt-blue3 justify-between rounded-2xl p-6 shadow-[inset_0_0_0_2px_var(--dmt-blue2)] open:border open:border-dmt-blue1 transition-all duration-400;
+  }
+  .faq-summary {
+    @apply cursor-pointer w-full flex justify-between font-semibold text-left text-lg leading-[150%]
+  }
+  .faq-paragraph {
+    @apply mt-4 text-dmt-black2 leading-[150%] font-normal text-lg;
+  }
+  .faq-plus {
+    @apply absolute inset-0 w-5 h-5 group-open:hidden
+  }
+  .faq-minus {
+    @apply absolute inset-0 hidden group-open:block 
+  }
+  /* footer  */
+      .footer-bg {
+    @apply bg-[#0B2440] rounded-t-[20px] md:rounded-t-[40px]
+    lg:rounded-t-[80px] xl:rounded-t-[100px] text-white mt-10 lg:mt-35 pt-8 lg:pt-16 pb-10
+  }
+  .footer-heading {
+    @apply font-medium sm:font-semibold text-sm sm:text-base leading-[150%] text-center
+  }
+  .footer-contact {
+    @apply text-[12px] sm:text-base font-normal leading-[120%]
+  }
+
+  .title{
+    @apply text-3xl lg:text-5xl xl:text-[56px] font-extrabold mb-4 text-dmt-black1 leading-[120%];
+  }
+  .paragraph{
+    @apply mx-auto px-2 text-dmt-black2 text-sm xl:text-[18px] leading-[150%];
+  }
+}
